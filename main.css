@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  color: #0f1623;
+}
+h3 {
+  color: #d4c19c;
+}
+p {
+  color: #000;
+}
+
+header {
+  background: #0f1623;
+  color: #f0e9dc;
+}
+section {
+  position: relative;
+  min-height: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 35px;
+  float: left;
+}
+section.vanilla {
+  background: #f0e9dc;
+  color: #0f1623;
+}
+section.dark {
+  background: #0f1623;
+  color: #f0e9dc;
+}
+section.nopadd {
+  padding: 0;
+}
+article {
+  position: relative;
+  margin: 0 8vw;
+  width: 84vw;
+  margin-bottom: -50px;
+  min-height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  background: #fff;
+
+  transform: translateZ(10px);
+  z-index: 2000000;
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+article.upperlower {
+  margin-bottom: -100px;
+  top: -50px;
+}
+article:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#main_menu ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+}
+#main_menu ul li {
+  display: inline-block;
+  width: 20%;
+  font-size: 20px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  text-align: center;
+
+  vertical-align: middle;
+}
+#main_menu ul li.title {
+  position: relative;
+  font-size: 30px;
+}
+#main_menu ul li.title img {
+  position: absolute;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  left: 50%;
+  top: 40%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  transform: translateX(-50%);
+  z-index: 2000001;
+}
+
+#opening_hours div {
+  position: relative;
+  width: 33.3%;
+  float: left;
+  height: 33vw;
+  overflow: hidden;
+  z-index: 0;
+  margin: 0;
+}
+#opening_hours div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(15, 22, 35, 0.6);
+}
+#opening_hours div.hoverable::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+#opening_hours div.hoverable:hover::after {
+  background: rgba(15, 22, 35, 0.6);
+  opacity: 1;
+}
+
+#opening_hours div img {
+  max-width: 150%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+#interior-box {
+  max-height: 400px;
+  height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+  text-align: center;
+}
+#interior-box.open {
+  max-height: 600px;
+}
+.promo_text{
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10% 12% 0 12%;
+}
+.button_body{
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.o_hours{
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.o_hours_wrapper{
+  position: relative;
+  padding: 2% 25%;
+  font-size: 1.3em;
+}
+/*  FOOTER CSS  */ 
