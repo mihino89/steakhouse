@@ -1,16 +1,22 @@
 body {
   margin: 0;
   padding: 0;
+  color: #f0e9dc;
+}
+ul {
+  list-style: none;
 }
 h1,
 h2 {
   color: #0f1623;
 }
-h3 {
-  color: #d4c19c;
+h3,
+a {
+  color: #f0e9dc;
+  text-decoration: none;
 }
 p {
-  color: #000;
+  font-size: 1.5vw;
 }
 
 header {
@@ -25,12 +31,17 @@ section {
   padding: 50px 35px;
   float: left;
 }
-section.vanilla {
+section.vanilla,
+article.vanilla {
   background: #f0e9dc;
   color: #0f1623;
 }
 section.dark {
   background: #0f1623;
+  color: #f0e9dc;
+}
+article.dark {
+  background: rgba(21, 20, 18, 1);
   color: #f0e9dc;
 }
 section.nopadd {
@@ -57,6 +68,13 @@ article.upperlower {
 }
 article:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+.absolute_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 #main_menu ul {
@@ -101,6 +119,7 @@ article:hover {
   overflow: hidden;
   z-index: 0;
   margin: 0;
+  color: #f0e9dc;
 }
 #opening_hours div::after {
   content: "";
@@ -111,7 +130,11 @@ article:hover {
   left: 0;
   background: rgba(15, 22, 35, 0.6);
 }
-#opening_hours div.hoverable::after {
+#opening_hours span {
+  z-index: 1000;
+  transform: translate(-50%, -50%) translateZ(200px);
+}
+.hoverable::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -121,8 +144,8 @@ article:hover {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
-#opening_hours div.hoverable:hover::after {
-  background: rgba(15, 22, 35, 0.6);
+.hoverable:hover::after {
+  background: rgba(15, 22, 35, 0.25);
   opacity: 1;
 }
 
@@ -132,36 +155,150 @@ article:hover {
   min-height: 100%;
   margin: 0 auto;
 }
+
+/** GALLERY */
 #interior-box {
+  position: relative;
   max-height: 400px;
-  height: 1000px;
-  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+  text-align: left;
+  font-size: 0;
+  cursor: pointer;
+}
+#interior-box::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  z-index: 20;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 22, 35, 0.6));
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  opacity: 0.6;
+}
+#interior-box:hover::after {
+  opacity: 1;
+}
+#interior-box i {
   text-align: center;
+  font-size: 3.5vw;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  color: #0f1623;
+  bottom: 0;
+  transform: translateZ(100px);
+  transition: all 0.5s ease-in-out;
+}
+#interior-box.open i {
+  transform: rotate(-180deg) translateZ(100px);
 }
 #interior-box.open {
-  max-height: 600px;
+  max-height: 2000px;
 }
-.promo_text{
-  font-size: 1.3em;
-  text-align: center;
-  padding: 10% 12% 0 12%;
+#interior-box.open::after {
+  opacity: 0;
 }
-.button_body{
+.gallery-img {
+  position: relative;
+  display: inline-block;
+  width: 33.33333%;
+  height: 25vw;
+  overflow: hidden;
+}
+.gallery-img img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 150%;
+  max-width: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*  FOOTER CSS  */
+.body_sec {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-height: 250px;
+  padding: 15px 0 0 0;
+}
+
+.body_sec_overlay::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: translateZ(1px);
+
+  background: rgba(15, 22, 35, 0.8);
+}
+.footer_body {
   position: relative;
   overflow: hidden;
+  padding: 3% 8vw 0 8vw;
+}
+.footer_body .box {
+  padding-bottom: 30px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+  text-align: left;
+}
+.footer_sec {
+  margin: 0;
+  padding: 5px 0;
+  z-index: 5;
+}
+.pre_footer_body {
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+  margin-top: 50px;
+  padding: 1% 12% 1% 12%;
+  z-index: 5;
+  background: rgba(21, 20, 18, 0.6);
+}
+.sec_6,
+.sec_5 {
   text-align: center;
 }
 
-.o_hours{
-  border-bottom: 2px solid #000;
-  border-top: 2px solid #000;
-  max-width: 300px;
-  margin: 0 auto;
+.footer_body .box h4:not(:first-child) {
+  margin-top: 40px;
 }
 
-.o_hours_wrapper{
-  position: relative;
-  padding: 2% 25%;
-  font-size: 1.3em;
+#map_w_marker {
+  display: block;
+  height: 350px;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  z-index: 1000;
+  padding: 0;
 }
-/*  FOOTER CSS  */ 
+
+.social_list {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  z-index: 4;
+  text-align: center;
+}
+.social_list li a {
+  display: inline-block;
+  padding: 0 5px 20px 5px;
+}
+.box a,
+.box span {
+  display: block;
+}

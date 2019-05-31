@@ -6,7 +6,7 @@ if (isset($p_valid)) {
     <section data-jarallax data-speed="0.6" id="contact" class="jarallax body_sec body_sec_overlay">
         <img class="jarallax-img" src="ffooter1.jpg" alt="footer-img">
         <div class="footer_body row">
-            <section class="columns six">
+            <section class="columns six nopadd">
                 <div id="map_w_marker"></div>
 
             </section>
@@ -35,11 +35,11 @@ if (isset($p_valid)) {
                     <!-- Social icons menu  -->
                     <li class="columns six"><a target="_blank" rel="noopener noreferrer"
                             href="https://www.facebook.com/Open-House-Cafe-Bistro-2191301447775528/"><i
-                                class="fa fa-facebook"></i></a></li>
+                                class="fab fa-facebook-f"></i></a></li>
                     <!-- <li class="columns three"><a href="#"><i class="fa fa-twitter"></i></a></li> -->
                     <li class="columns six"><a target="_blank" rel="noopener noreferrer"
                             href="https://instagram.com/openhousecafebistro?utm_source=ig_profile_share&igshid=fie8ts5vtczd"><i
-                                class="fa fa-instagram"></i></a></li>
+                                class="fab fa-instagram"></i></a></li>
                     <!-- <li class="columns three"><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
                 </ul>
             </div>
@@ -50,12 +50,9 @@ if (isset($p_valid)) {
     </section>
 </footer>
 
-<script src="assets/js/jquery.min.js"></script>
 <!-- Jarallax -->
 <script src="https://unpkg.com/jarallax@1.10/dist/jarallax.min.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/main.js?v"></script>
-<script type="text/javascript" src="assets/js/simple-lightbox.js"></script>
+<script src="https://kit.fontawesome.com/1f0627b04f.js"></script>
 <!--<script src="assets/js/parallax.min.js"></script>-->
 
 <script>
