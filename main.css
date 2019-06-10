@@ -3,56 +3,135 @@ body {
   padding: 0;
   color: #f0e9dc;
 }
+
 ul {
   list-style: none;
 }
-h1,
-h2 {
-  color: #0f1623;
+
+h1 {
+  text-align: center;
 }
+
 h3,
 a {
   color: #f0e9dc;
   text-decoration: none;
+  transition: all 0.3s ease-out;
 }
+
+a:hover {
+  color: #AF4900;
+}
+
 p {
+  font-size: 1.75vw;
+}
+
+a.button {
+  padding: 10px 10px;
   font-size: 1.5vw;
+  background: #AF4900;
+  color: #f0e9dc;
+}
+
+a.button:hover {
+  background: #AF4900;
+}
+
+.highlight_colour {
+  color: #AF4900;
+}
+
+.align_left {
+  text-align: left !important;
 }
 
 header {
-  background: #0f1623;
+  float: left;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  background-image: url('header.jpg');
+  background-size: cover;
+  background-position: center;
   color: #f0e9dc;
 }
+
+header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(15, 22, 35, 0.25);
+}
+
 section {
   position: relative;
-  min-height: 300px;
   width: 100%;
   box-sizing: border-box;
   padding: 50px 35px;
+  min-height: 300px;
   float: left;
 }
-section.vanilla,
-article.vanilla {
+
+section.vanilla {
   background: #f0e9dc;
   color: #0f1623;
 }
+
+article.vanilla {
+  background: rgba(240, 233, 220, 0.9);
+  color: #0f1623;
+
+}
+
 section.dark {
   background: #0f1623;
   color: #f0e9dc;
 }
+
 article.dark {
   background: rgba(21, 20, 18, 1);
   color: #f0e9dc;
 }
+
 section.nopadd {
   padding: 0;
 }
+
+.basic_padd {
+  position: relative;
+  box-sizing: border-box;
+  padding: 50px 50px 35px 50px;
+}
+
+.abs_img_wrap {
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.abs_img_wrap img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  max-height: 150%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(15px);
+}
+
 article {
+  float: left;
   position: relative;
   margin: 0 8vw;
   width: 84vw;
   margin-bottom: -50px;
+  box-sizing: border-box;
   min-height: 400px;
+  height: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
   background: #fff;
@@ -62,13 +141,20 @@ article {
 
   transition: box-shadow 0.2s ease-in-out;
 }
+
 article.upperlower {
   margin-bottom: -100px;
   top: -50px;
 }
+
 article:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
+
+article.nopadd {
+  padding: 0;
+}
+
 .absolute_center {
   position: absolute;
   top: 50%;
@@ -84,6 +170,13 @@ article:hover {
   font-size: 0;
   list-style: none;
 }
+
+#main_menu ul a li {
+  transform: translateZ(100px);
+  z-index: 2000001;
+  transition: all 0.3s ease-out;
+}
+
 #main_menu ul li {
   display: inline-block;
   width: 20%;
@@ -94,10 +187,16 @@ article:hover {
 
   vertical-align: middle;
 }
+
+#main_menu ul a:hover {
+  color: #AF4900;
+}
+
 #main_menu ul li.title {
   position: relative;
   font-size: 30px;
 }
+
 #main_menu ul li.title img {
   position: absolute;
   width: 100%;
@@ -105,15 +204,21 @@ article:hover {
   height: auto;
   left: 50%;
   top: 40%;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
   transform: translateX(-50%);
   z-index: 2000001;
+
+  transition: all 0.3s ease-out;
+}
+
+#main_menu ul li.title:hover img {
+  transform: translateX(-50%) scale(1.05);
 }
 
 #opening_hours div {
   position: relative;
-  width: 33.3%;
   float: left;
   height: 33vw;
   overflow: hidden;
@@ -121,6 +226,7 @@ article:hover {
   margin: 0;
   color: #f0e9dc;
 }
+
 #opening_hours div::after {
   content: "";
   position: absolute;
@@ -130,10 +236,16 @@ article:hover {
   left: 0;
   background: rgba(15, 22, 35, 0.6);
 }
+
 #opening_hours span {
   z-index: 1000;
   transform: translate(-50%, -50%) translateZ(200px);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px 30px 10px 30px;
 }
+
 .hoverable::after {
   content: "";
   position: absolute;
@@ -144,6 +256,7 @@ article:hover {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
+
 .hoverable:hover::after {
   background: rgba(15, 22, 35, 0.25);
   opacity: 1;
@@ -156,6 +269,13 @@ article:hover {
   margin: 0 auto;
 }
 
+/** REVIEWS */
+#reviews,
+#menus {
+  padding: 100px 35px;
+  min-height: 500px;
+}
+
 /** GALLERY */
 #interior-box {
   position: relative;
@@ -166,6 +286,7 @@ article:hover {
   font-size: 0;
   cursor: pointer;
 }
+
 #interior-box::after {
   content: "";
   position: absolute;
@@ -174,34 +295,43 @@ article:hover {
   z-index: 20;
   left: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 22, 35, 0.6));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 22, 35, 0.3));
   transition: all 0.5s ease-in-out;
   pointer-events: none;
-  opacity: 0.6;
 }
-#interior-box:hover::after {
-  opacity: 1;
-}
+
 #interior-box i {
   text-align: center;
   font-size: 3.5vw;
   position: absolute;
   width: 100%;
   left: 0;
-  color: #0f1623;
   bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3);
   transform: translateZ(100px);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
+
+#interior-box:hover i {
+  transform: scale(1.15);
+}
+
 #interior-box.open i {
   transform: rotate(-180deg) translateZ(100px);
 }
+
+#interior-box.open:hover i {
+  transform: rotate(-180deg) translateZ(100px) scale(1.15);
+}
+
 #interior-box.open {
   max-height: 2000px;
 }
+
 #interior-box.open::after {
   opacity: 0;
 }
+
 .gallery-img {
   position: relative;
   display: inline-block;
@@ -209,6 +339,7 @@ article:hover {
   height: 25vw;
   overflow: hidden;
 }
+
 .gallery-img img {
   position: absolute;
   min-width: 100%;
@@ -219,6 +350,7 @@ article:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /*  FOOTER CSS  */
 .body_sec {
   position: relative;
@@ -240,11 +372,13 @@ article:hover {
 
   background: rgba(15, 22, 35, 0.8);
 }
+
 .footer_body {
   position: relative;
   overflow: hidden;
   padding: 3% 8vw 0 8vw;
 }
+
 .footer_body .box {
   padding-bottom: 30px;
   text-align: center;
@@ -253,11 +387,13 @@ article:hover {
   z-index: 3;
   text-align: left;
 }
+
 .footer_sec {
   margin: 0;
   padding: 5px 0;
   z-index: 5;
 }
+
 .pre_footer_body {
   position: relative;
   overflow: hidden;
@@ -267,6 +403,7 @@ article:hover {
   z-index: 5;
   background: rgba(21, 20, 18, 0.6);
 }
+
 .sec_6,
 .sec_5 {
   text-align: center;
@@ -294,11 +431,24 @@ article:hover {
   z-index: 4;
   text-align: center;
 }
+
 .social_list li a {
   display: inline-block;
   padding: 0 5px 20px 5px;
 }
+
 .box a,
 .box span {
   display: block;
+}
+
+@media (max-width: 800px) {
+  #opening_hours div {
+    height: 100vw;
+  }
+
+  .gallery-img {
+    width: 50%;
+    height: 42vw;
+  }
 }

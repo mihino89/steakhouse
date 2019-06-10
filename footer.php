@@ -12,13 +12,13 @@ if (isset($p_valid)) {
             </section>
             <address style="font-style: normal;">
                 <div class="box columns three">
-                    <h4 class="d_text" data="addr_h">Adresa</h4>
+                    <h4 class="d_text highlight_colour" data="addr_h">Adresa</h4>
                     <span class="footer_sec">Vajnorská 1307/19</span>
                     <span class="footer_sec">831 03 Bratislava</span>
                 </div>
                 <div class="box columns three">
 
-                    <h4 class="d_text" data="c_us">Kontaktuje Nás</h4>
+                    <h4 class="d_text highlight_colour" data="c_us">Kontaktuje Nás</h4>
                     <a class="footer_sec" href="mailto:openhousecafebistro@gmail.com">openhousecafebistro@gmail.com</a>
                     <a class="footer_sec" href="tel:0910668331">0910668331</a>
                     <!--<span class="footer_sec">ICO: 9023201 </span>-->
